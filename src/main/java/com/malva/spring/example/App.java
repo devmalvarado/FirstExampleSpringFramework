@@ -1,6 +1,6 @@
 package com.malva.spring.example;
 
-import org.springframework.context.ApplicationContext;
+
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -16,7 +16,11 @@ import com.malva.spring.beans.Mundo;
 public class App {
     public static void main( String[] args ){
     	
-        ApplicationContext appcontext = new AnnotationConfigApplicationContext(AppConfig.class, AppConfig2.class);
+    	AnnotationConfigApplicationContext appcontext = new AnnotationConfigApplicationContext();
+    	appcontext.register(AppConfig.class);
+    	appcontext.register(AppConfig2.class);
+    	appcontext.refresh();
+    	
     	Marte ma = (Marte) appcontext.getBean("marte");
     	Mundo mu = (Mundo) appcontext.getBean("mundo");
         System.out.println(ma.getSaludo() + mu.getSaludo());
