@@ -13,7 +13,7 @@ public class App {
     public static void main( String[] args ){
     	
         ApplicationContext appContext = new ClassPathXmlApplicationContext("com/malva/spring/xml/beans.xml");
-    	Persona per = (Persona) appContext.getBean("persona");
+    	Persona per = (Persona) appContext.getBean("personaBean");
     	System.out.println(per.getId() + " " + per.getNombre() + " " + per.getApodo() + " " + per.getPais().getNombre() + " " + per.getPais().getCiudadela().getNombre());
     	((ConfigurableApplicationContext)appContext).close();
     }
