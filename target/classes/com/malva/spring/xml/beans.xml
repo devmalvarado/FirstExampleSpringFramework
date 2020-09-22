@@ -3,10 +3,9 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean id="persona" class="com.malva.spring.beans.Persona" autowire="byType" scope="singleton" lazy-init="true">	
+	<bean id="persona" class="com.malva.spring.beans.Persona" autowire="byName" init-method="init" destroy-method="destroy"  >	
 		
-		<property name="id" value="2"> </property>
-		<property name="nombre" value="Manuel"> </property>
+		
 		<property name="apodo" value="manu"> </property>
 	</bean>
 	
@@ -21,6 +20,6 @@
 	
 	
 	
-	<alias name="persona" alias="personaBean"/>
+	
 	
 </beans>
