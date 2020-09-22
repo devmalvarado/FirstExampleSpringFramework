@@ -16,6 +16,10 @@ public class App {
     	Persona per = (Persona) appContext.getBean("personaBean");
     	Persona per2 = (Persona) appContext.getBean("personaBean");
     	
+    	per.setId(1);
+    	per.setNombre("Juan Pablo");
+    	per.setApodo("palillo");
+    	
     	System.out.println(per2 + " " + per2.getId() + " " + per2.getNombre() + " " + per.getApodo() + " " + per2.getPais().getNombre() + " " + per2.getCiudadela().getNombre());
     	System.out.println(per + " " + per.getId() + " " + per.getNombre() + " " + per.getApodo() + " " + per.getPais().getNombre() + " " + per.getCiudadela().getNombre());
     	((ConfigurableApplicationContext)appContext).close();
