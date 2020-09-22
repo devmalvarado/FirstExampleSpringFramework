@@ -6,9 +6,12 @@ import lombok.Setter;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
+
 @Setter
 @Getter
-public class Persona {
+public class Persona implements InitializingBean, DisposableBean {
 	
 	private int id;
 	private String nombre;
@@ -16,13 +19,20 @@ public class Persona {
 	private Pais pais;
 	private Ciudad ciudadela;
 	
-	@PostConstruct
-	private void initBean() {
+	
+	
+	@Override
+	public void afterPropertiesSet() throws Exception {
 		System.out.println("antes de iniciar el Bean");
+		
 	}
-	@PreDestroy
-	private void destroy() {
+
+
+
+	@Override
+	public void destroy() throws Exception {
 		System.out.println("Bean justo antes de ser destruido");
+		
 	}
 	
 }
