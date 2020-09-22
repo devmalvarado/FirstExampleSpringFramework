@@ -3,9 +3,15 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean id="persona" class="com.malva.spring.beans.Persona">
-		<constructor-arg index="2" value="manu"></constructor-arg>
-		<constructor-arg index="0" value="1"></constructor-arg>
-		<constructor-arg index="1" value="Manuel"></constructor-arg>
+	<bean id="persona" class="com.malva.spring.beans.Persona">	
+		<property name="pais" ref="land"> </property>
+		<property name="id" value="2"> </property>
+		<property name="nombre" value="Manuel"> </property>
+		<property name="apodo" value="manu"> </property>
 	</bean>
+	
+	<bean id="land" class="com.malva.spring.beans.Pais">
+		<property name="nombre" value="USA"> </property>
+	</bean>
+	
 </beans>
