@@ -4,19 +4,23 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<bean id="persona" class="com.malva.spring.beans.Persona">	
-		<property name="pais" ref="land"> </property>
+		<property name="pais" > 
+			<bean id="land" class="com.malva.spring.beans.Pais">
+				<property name="nombre" value="USA"> </property>
+				<property name="ciudadela" > 
+					<bean id="city" class="com.malva.spring.beans.Ciudad">
+					<property name="nombre" value="Urbana"> </property>
+					</bean>
+				</property>
+			</bean>
+		</property>
 		<property name="id" value="2"> </property>
 		<property name="nombre" value="Manuel"> </property>
 		<property name="apodo" value="manu"> </property>
 	</bean>
 	
-	<bean id="land" class="com.malva.spring.beans.Pais">
-		<property name="nombre" value="USA"> </property>
-		<property name="ciudadela" ref="city"> </property>
-	</bean>
 	
-	<bean id="city" class="com.malva.spring.beans.Ciudad">
-		<property name="nombre" value="Urbana"> </property>
-	</bean>
+	
+	
 	
 </beans>
