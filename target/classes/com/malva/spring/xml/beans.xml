@@ -4,6 +4,8 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<bean id="persona" class="com.malva.spring.beans.Persona">
-		<constructor-arg type="int" value="1"></constructor-arg>
+		<constructor-arg index="2" value="manu"></constructor-arg>
+		<constructor-arg index="0" value="1"></constructor-arg>
+		<constructor-arg index="1" value="Manuel"></constructor-arg>
 	</bean>
 </beans>
