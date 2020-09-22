@@ -15,7 +15,7 @@ public class Persona {
 	private Pais pais;
 	private Ciudad ciudadela;
 	
-	private void init() {
+	private void initBean() {
 		System.out.println("antes de iniciar el Bean");
 	}
 	
