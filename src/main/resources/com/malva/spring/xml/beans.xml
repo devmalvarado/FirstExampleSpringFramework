@@ -3,7 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean id="persona" class="com.malva.spring.beans.Persona">	
+	<bean id="persona" class="com.malva.spring.beans.Persona" name="personaBean2">	
 		<property name="pais" ref="land"> </property>
 		<property name="id" value="2"> </property>
 		<property name="nombre" value="Manuel"> </property>
