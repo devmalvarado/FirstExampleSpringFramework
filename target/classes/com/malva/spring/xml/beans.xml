@@ -3,35 +3,23 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean id="persona" class="com.malva.spring.beans.Persona" name="personaBean2">	
-		<property name="pais" ref="land"> </property>
+	<bean id="persona" class="com.malva.spring.beans.Persona" autowire="byName">	
+		
 		<property name="id" value="2"> </property>
 		<property name="nombre" value="Manuel"> </property>
 		<property name="apodo" value="manu"> </property>
 	</bean>
 	
-	<bean id="land" class="com.malva.spring.beans.Pais">
+	<bean id="pais" class="com.malva.spring.beans.Pais">
 		<property name="nombre" value="USA"> </property>
-		<property name="ciudades" > 
-			<list>
-				<ref bean="city"/>
-				<ref bean="city2"/>
-				<ref bean="city3"/>
-			</list>
-		</property>
+		
 	</bean>
 	
-	<bean id="city" class="com.malva.spring.beans.Ciudad">
+	<bean id="ciudadela" class="com.malva.spring.beans.Ciudad">
 		<property name="nombre" value="Urbana"> </property>
 	</bean>
 	
-	<bean id="city2" class="com.malva.spring.beans.Ciudad">
-		<property name="nombre" value="Champaign"> </property>
-	</bean>
 	
-	<bean id="city3" class="com.malva.spring.beans.Ciudad">
-		<property name="nombre" value="Orange County"> </property>
-	</bean>
 	
 	<alias name="persona" alias="personaBean"/>
 	

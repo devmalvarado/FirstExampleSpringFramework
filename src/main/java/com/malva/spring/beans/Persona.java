@@ -13,6 +13,7 @@ public class Persona {
 	private String nombre;
 	private String apodo;
 	private Pais pais;
+	private Ciudad ciudadela;
 	
 	
 }
