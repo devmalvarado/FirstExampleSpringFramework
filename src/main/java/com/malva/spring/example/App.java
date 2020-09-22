@@ -17,6 +17,5 @@ public class App {
     	
     	
     	System.out.println( per.getApodo() );
-    	((ConfigurableApplicationContext)appContext).close();
     }
 }
