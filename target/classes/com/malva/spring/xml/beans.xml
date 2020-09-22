@@ -3,19 +3,19 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean id="persona" class="com.malva.spring.beans.Persona" autowire="byName">	
+	<bean id="persona" class="com.malva.spring.beans.Persona" autowire="byType">	
 		
 		<property name="id" value="2"> </property>
 		<property name="nombre" value="Manuel"> </property>
 		<property name="apodo" value="manu"> </property>
 	</bean>
 	
-	<bean id="pais" class="com.malva.spring.beans.Pais">
+	<bean id="land" class="com.malva.spring.beans.Pais">
 		<property name="nombre" value="USA"> </property>
 		
 	</bean>
 	
-	<bean id="ciudadela" class="com.malva.spring.beans.Ciudad">
+	<bean id="city" class="com.malva.spring.beans.Ciudad">
 		<property name="nombre" value="Urbana"> </property>
 	</bean>
 	
