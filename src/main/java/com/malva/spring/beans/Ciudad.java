@@ -5,7 +5,6 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class Pais {
+public class Ciudad {
 	private String nombre;
-	private Ciudad ciudadela;
 }
