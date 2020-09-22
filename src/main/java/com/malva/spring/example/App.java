@@ -1,29 +1,20 @@
 package com.malva.spring.example;
 
 
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.malva.spring.beans.AppConfig;
-import com.malva.spring.beans.AppConfig2;
-import com.malva.spring.beans.Marte;
-import com.malva.spring.beans.Mundo;
 
-/**
- * Hello world!
- *
- */
+import com.malva.spring.beans.Persona;
+
+
 public class App {
     public static void main( String[] args ){
     	
-    	AnnotationConfigApplicationContext appcontext = new AnnotationConfigApplicationContext();
-    	appcontext.register(AppConfig.class);
-    	appcontext.register(AppConfig2.class);
-    	appcontext.refresh();
-    	
-    	Marte ma = (Marte) appcontext.getBean("marte");
-    	Mundo mu = (Mundo) appcontext.getBean("mundo");
-        System.out.println(ma.getSaludo() + mu.getSaludo());
-        ((ConfigurableApplicationContext)appcontext).close();
+        ApplicationContext appContext = new ClassPathXmlApplicationContext("com/malva/spring/xml/beans.xml");
+    	Persona per = (Persona) appContext.getBean("persona");
+    	System.out.println(per.getId() + " " + per.getNombre() + " " + per.getApodo());
+    	((ConfigurableApplicationContext)appContext).close();
     }
 }

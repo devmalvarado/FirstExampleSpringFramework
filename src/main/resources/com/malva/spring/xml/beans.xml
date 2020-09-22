@@ -3,8 +3,9 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean id="mundo" class="com.malva.spring.beans.Mundo">
-		<property name="saludo" value="Holi crayoli!"></property>	
+	<bean id="persona" class="com.malva.spring.beans.Persona">
+		<constructor-arg value="1"></constructor-arg>
+		<constructor-arg value="Manuel"></constructor-arg>
+		<constructor-arg value="manu"></constructor-arg>
 	</bean>
-
 </beans>
